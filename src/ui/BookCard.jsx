@@ -1,9 +1,9 @@
 import React from "react";
+import { CiStar } from "react-icons/ci";
 
 const BookCard = ({ book }) => {
-  console.log(book);
   return (
-    <div className="border-2 border-gray-300 p-5 rounded-3xl">
+    <div className="border-2 border-gray-300 p-5 rounded-3xl cursor-pointer">
       <div className="text-center bg-[#F3F3F3] rounded-2xl py-8">
         <img className="mx-auto h-41" src={book.image} alt={book.bookName} />
       </div>
@@ -26,12 +26,13 @@ const BookCard = ({ book }) => {
         </p>
       </div>
       <div className="border-t-2 border-dashed border-[#131313]/15 ">
-        <div className="mt-5">
+        <div className="mt-5 flex items-center justify-between">
           <div>
-            <p>Fiction</p>
+            <p className="font-medium text-[#131313]/80 ">Fiction</p>
           </div>
-          <div>
-            <p>5.00</p>
+          <div className="flex items-center gap-2">
+            <p className="font-medium text-[#131313]/80 ">5.00</p>
+            <CiStar className="font-bold text-2xl" />
           </div>
         </div>
       </div>
