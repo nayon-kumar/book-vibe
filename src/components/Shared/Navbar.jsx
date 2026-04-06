@@ -8,7 +8,7 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            `font-semibold ${isActive ? "text-green-500 border border-green-500" : ""}`
+            `${isActive ? "text-green-500 border border-green-500" : ""}`
           }
         >
           Home
@@ -18,7 +18,7 @@ const Navbar = () => {
         <NavLink
           to="/books"
           className={({ isActive }) =>
-            `font-semibold ${isActive ? "text-green-500 border border-green-500" : ""}`
+            `${isActive ? "text-green-500 border border-green-500" : ""}`
           }
         >
           Listed Books
@@ -28,7 +28,7 @@ const Navbar = () => {
         <NavLink
           to="/page-to-load"
           className={({ isActive }) =>
-            `font-semibold ${isActive ? "text-green-500 border border-green-500" : ""}`
+            `${isActive ? "text-green-500 border border-green-500" : ""}`
           }
         >
           Page To Read
