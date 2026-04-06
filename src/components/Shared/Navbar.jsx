@@ -8,7 +8,7 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            `${isActive ? "text-green-500 border border-green-500" : ""}`
+            `${isActive ? "text-[#1A2980] border border-[#1A2980]" : ""}`
           }
         >
           Home
@@ -18,7 +18,7 @@ const Navbar = () => {
         <NavLink
           to="/books"
           className={({ isActive }) =>
-            `${isActive ? "text-green-500 border border-green-500" : ""}`
+            `${isActive ? "text-[#1A2980] border border-[#1A2980]" : ""}`
           }
         >
           Listed Books
@@ -28,7 +28,7 @@ const Navbar = () => {
         <NavLink
           to="/page-to-load"
           className={({ isActive }) =>
-            `${isActive ? "text-green-500 border border-green-500" : ""}`
+            `${isActive ? "text-[#1A2980] border border-[#1A2980]" : ""}`
           }
         >
           Page To Read
@@ -71,7 +71,10 @@ const Navbar = () => {
               </ul>
             </div>
             <div className="flex items-center gap-3 cursor-pointer">
-              <Link to="/" className="text-xl font-bold">
+              <Link
+                to="/"
+                className="text-xl font-bold bg-linear-to-r from-[#1A2980] to-[#26D0CE] bg-clip-text text-transparent "
+              >
                 Book Vibe
               </Link>
             </div>
