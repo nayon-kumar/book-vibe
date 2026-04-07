@@ -1,9 +1,13 @@
 import React from "react";
 import { CiStar } from "react-icons/ci";
+import { Link } from "react-router";
 
 const BookCard = ({ book }) => {
   return (
-    <div className="border-2 border-gray-300 p-5 rounded-3xl cursor-pointer shadow-xl hover:shadow-2xl">
+    <Link
+      to={`/book-details/${book.bookId}`}
+      className="border-2 border-gray-300 p-5 rounded-3xl cursor-pointer shadow-xl hover:shadow-2xl"
+    >
       <div className="text-center bg-[#F3F3F3] rounded-2xl py-8">
         <img
           className="mx-auto h-41 hover:scale-110 transition-all duration-300 ease-in-out"
@@ -40,7 +44,7 @@ const BookCard = ({ book }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
