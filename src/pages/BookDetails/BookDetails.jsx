@@ -16,7 +16,7 @@ const BookDetails = () => {
         />
       </div>
       <div className="md:flex-1">
-        <h2 className="text-[#131313] font-bold text-2xl md:text-3xl ">
+        <h2 className="text-[#131313] font-bold text-2xl md:text-3xl">
           {expectedBook.bookName}
         </h2>
         <p className="text-[#131313]/80 mt-4 border-b-2 pb-8 border-[#131313]/15 font-medium ">
@@ -58,9 +58,9 @@ const BookDetails = () => {
             <p>4.8</p>
           </div>
         </div>
-        <div className="mt-8 flex items-center gap-4">
-          <button className="btn btn-info text-white">Read</button>
-          <button className="btn btn-primary">Wishlist</button>
+        <div className="mt-8 flex flex-wrap items-center justify-center md:justify-normal gap-4">
+          <button className="btn btn-info text-white">Mark as Read</button>
+          <button className="btn btn-primary">Add to Wishlist</button>
           <Link to="/" className="btn">
             Back to Home
           </Link>

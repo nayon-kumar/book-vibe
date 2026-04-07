@@ -2,10 +2,10 @@ import React, { use } from "react";
 import BookCard from "../../ui/BookCard";
 const booksPromise = fetch("/booksData.json").then((res) => res.json());
 
-const AllBooks = () => {
+const AllBooks = ({ allBooksRef }) => {
   const books = use(booksPromise);
   return (
-    <div>
+    <div ref={allBooksRef}>
       <h3 className="text-[#131313] font-bold text-4xl mt-15 text-center ">
         All Books
       </h3>

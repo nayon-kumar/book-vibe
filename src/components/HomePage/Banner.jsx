@@ -1,7 +1,7 @@
 import React from "react";
 import banner from "../../assets/banner.png";
 
-const Banner = () => {
+const Banner = ({ scrollToAllBooks }) => {
   return (
     <div className="bg-[#131313]/5 mt-25 rounded-3xl">
       <div className="flex gap-10 flex-wrap-reverse items-center justify-around py-10">
@@ -10,7 +10,9 @@ const Banner = () => {
             Books to freshen up <br />
             your bookshelf
           </h2>
-          <button className="btn btn-primary mt-12">View The List</button>
+          <button onClick={scrollToAllBooks} className="btn btn-primary mt-12">
+            View The List
+          </button>
         </div>
         <div>
           <img src={banner} alt="Banner" />
