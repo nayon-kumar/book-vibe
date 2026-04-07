@@ -8,7 +8,7 @@ const BookDetails = () => {
   // find specefic selected book
   const expectedBook = books.find((book) => book.bookId === Number(params.id));
 
-  const { addToRead } = useContext(BookContext);
+  const { addToRead, addToWishlist } = useContext(BookContext);
 
   return (
     <div className="flex flex-wrap items-center justify-center gap-10 mt-25 max-w-7xl mx-auto">
@@ -69,7 +69,12 @@ const BookDetails = () => {
           >
             Mark as Read
           </button>
-          <button className="btn btn-primary">Add to Wishlist</button>
+          <button
+            onClick={() => addToWishlist(expectedBook)}
+            className="btn btn-primary"
+          >
+            Add to Wishlist
+          </button>
           <Link to="/" className="btn">
             Back to Home
           </Link>
