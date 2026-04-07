@@ -3,7 +3,16 @@ import MainLayout from "../layout/MainLayout";
 import HomePage from "../pages/HomePage/HomePage";
 import BookPage from "../pages/BookPage/BookPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
-import BookDetails from "../components/HomePage/BookDetails";
+import BookDetails from "../pages/BookDetails/BookDetails";
+
+const loader = () => {
+  return (
+    <div className="flex items-center justify-center mt-10">
+      <span className="loading loading-spinner loading-xl"></span>
+    </div>
+  );
+};
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -16,6 +25,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "/book-details/:id",
+        loader: () => fetch("/booksData.json"),
+        HydrateFallback: loader,
         Component: BookDetails,
       },
       {
