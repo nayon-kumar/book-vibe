@@ -1,10 +1,14 @@
 import { Link, useLoaderData, useParams } from "react-router";
+import { BookContext } from "../../context/MyContext";
+import { useContext } from "react";
 
 const BookDetails = () => {
   const books = useLoaderData();
   const params = useParams();
+  // find specefic selected book
   const expectedBook = books.find((book) => book.bookId === Number(params.id));
-  console.log(expectedBook);
+
+  const { addToRead } = useContext(BookContext);
 
   return (
     <div className="flex flex-wrap items-center justify-center gap-10 mt-25 max-w-7xl mx-auto">
@@ -59,7 +63,12 @@ const BookDetails = () => {
           </div>
         </div>
         <div className="mt-8 flex flex-wrap items-center justify-center md:justify-normal gap-4">
-          <button className="btn btn-info text-white">Mark as Read</button>
+          <button
+            onClick={() => addToRead(expectedBook)}
+            className="btn btn-info text-white"
+          >
+            Mark as Read
+          </button>
           <button className="btn btn-primary">Add to Wishlist</button>
           <Link to="/" className="btn">
             Back to Home
