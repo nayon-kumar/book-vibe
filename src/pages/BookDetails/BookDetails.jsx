@@ -8,7 +8,16 @@ const BookDetails = () => {
   // find specefic selected book
   const expectedBook = books.find((book) => book.bookId === Number(params.id));
 
-  const { addToRead, addToWishlist } = useContext(BookContext);
+  const { readBooks, wishlistBooks, addToRead, addToWishlist } =
+    useContext(BookContext);
+
+  const isExistInRead = readBooks.find(
+    (readBook) => readBook.bookId === expectedBook.bookId,
+  );
+
+  const isExistInWish = wishlistBooks.find(
+    (wishlistBook) => wishlistBook.bookId === expectedBook.bookId,
+  );
 
   return (
     <div className="flex flex-wrap items-center justify-center gap-10 mt-25 max-w-7xl mx-auto">
@@ -66,14 +75,16 @@ const BookDetails = () => {
           <button
             onClick={() => addToRead(expectedBook)}
             className="btn btn-info text-white"
+            disabled={isExistInRead}
           >
-            Mark as Read
+            {isExistInRead ? "Marked as Read" : "Mark as Read"}
           </button>
           <button
             onClick={() => addToWishlist(expectedBook)}
             className="btn btn-primary"
+            disabled={isExistInWish}
           >
-            Add to Wishlist
+            {isExistInWish ? "Added to Wishlist" : "Add to Wishlist"}
           </button>
           <Link to="/" className="btn">
             Back to Home
