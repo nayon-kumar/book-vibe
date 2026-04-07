@@ -3,11 +3,10 @@ import { BookContext } from "../../context/MyContext";
 import ReadBookCard from "../../ui/ReadBookCard";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import WishBookCard from "../../ui/WishBookCard";
 
 const BookPage = () => {
   const { readBooks, wishlistBooks } = useContext(BookContext);
-  console.log("Read", readBooks);
-  console.log("Wish", wishlistBooks);
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -26,14 +25,21 @@ const BookPage = () => {
           </TabList>
 
           <TabPanel>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-8 mt-8">
               {readBooks.map((readBook) => (
                 <ReadBookCard key={readBook.bookId} readBook={readBook} />
               ))}
             </div>
           </TabPanel>
           <TabPanel>
-            <h2>Any content 2</h2>
+            <div className="flex flex-col gap-8 mt-8">
+              {wishlistBooks.map((wishlistBook) => (
+                <WishBookCard
+                  key={wishlistBook.bookId}
+                  wishlistBook={wishlistBook}
+                />
+              ))}
+            </div>
           </TabPanel>
         </Tabs>
       </div>
