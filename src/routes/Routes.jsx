@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage/HomePage";
 import BookPage from "../pages/BookPage/BookPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import BookDetails from "../pages/BookDetails/BookDetails";
+import PageToRead from "../pages/PageToRead/PageToRead";
 
 const loader = () => {
   return (
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
         loader: () => fetch("/booksData.json"),
         HydrateFallback: loader,
         Component: BookDetails,
+      },
+      {
+        path: "/page-to-read",
+        Component: PageToRead,
       },
       {
         path: "*",
