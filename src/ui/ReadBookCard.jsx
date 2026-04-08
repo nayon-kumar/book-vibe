@@ -1,6 +1,7 @@
 import React from "react";
 import { FaUserGroup } from "react-icons/fa6";
 import { GrDocumentText } from "react-icons/gr";
+import { Link } from "react-router";
 
 const ReadBookCard = ({ readBook }) => {
   return (
@@ -54,9 +55,12 @@ const ReadBookCard = ({ readBook }) => {
           <button className="rounded-full px-5 py-2.5 bg-[#FFAC33]/15 text-[#FFAC33] ">
             Rating: {readBook.rating}
           </button>
-          <button className="rounded-full px-5 py-2.5 bg-[#23BE0A] text-white cursor-pointer ">
+          <Link
+            to={`/book-details/${readBook.bookId}`}
+            className="rounded-full px-5 py-2.5 bg-[#23BE0A] text-white cursor-pointer "
+          >
             View Details
-          </button>
+          </Link>
         </div>
       </div>
     </div>
