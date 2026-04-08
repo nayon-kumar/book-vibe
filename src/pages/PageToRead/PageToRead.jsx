@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { FaBookOpenReader } from "react-icons/fa6";
 import {
   BarChart,
   Bar,
@@ -68,31 +69,48 @@ const PageToRead = () => {
     myData.push(newObj);
   }
   return (
-    <div className="mt-40">
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "700px",
-          height: "400px",
-          margin: "0 auto",
-        }}
-      >
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            data={myData}
-            margin={{ top: 20, right: 10, left: 10, bottom: 5 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <Tooltip cursor={{ fillOpacity: 0.5 }} />
-            <XAxis dataKey="bookName" />
-            <YAxis />
-
-            <Bar dataKey="pages" shape={TriangleBar} activeBar>
-              <LabelList content={CustomColorLabel} position="top" />
-            </Bar>
-          </BarChart>
-        </ResponsiveContainer>
+    <div className="mt-30">
+      <div className="text-center">
+        <h4 className="font-bold text-2xl mb-10 ">Your Wishlist Books</h4>
       </div>
+      {wishlistBooks.length === 0 ? (
+        <>
+          <div className="flex flex-col items-center justify-center pb-20">
+            <FaBookOpenReader className="text-gray-400" size={100} />
+            <p className="mt-5 text-gray-400 text-center">
+              Your wishlist books is empty. Go to Home page and add your
+              favourite books to wishlist to show how many page to read.
+            </p>
+          </div>
+        </>
+      ) : (
+        <>
+          <div
+            style={{
+              width: "100%",
+              maxWidth: "700px",
+              height: "400px",
+              margin: "0 auto",
+            }}
+          >
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                data={myData}
+                margin={{ top: 20, right: 10, left: 10, bottom: 5 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <Tooltip cursor={{ fillOpacity: 0.5 }} />
+                <XAxis dataKey="bookName" />
+                <YAxis />
+
+                <Bar dataKey="pages" shape={TriangleBar} activeBar>
+                  <LabelList content={CustomColorLabel} position="top" />
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </>
+      )}
     </div>
   );
 };
