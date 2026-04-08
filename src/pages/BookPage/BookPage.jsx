@@ -24,10 +24,26 @@ const BookPage = () => {
         );
         setSortedReadBooks(sortedData1);
         setSortedWishlistBooks(sortedData2);
+      } else if (sortingType === "pages-high-to-low") {
+        const sortedData1 = [...readBooks].sort(
+          (a, b) => b.totalPages - a.totalPages,
+        );
+        const sortedData2 = [...wishlistBooks].sort(
+          (a, b) => b.totalPages - a.totalPages,
+        );
+        setSortedReadBooks(sortedData1);
+        setSortedWishlistBooks(sortedData2);
       } else if (sortingType === "rating-low-to-high") {
         const sortedData1 = [...readBooks].sort((a, b) => a.rating - b.rating);
         const sortedData2 = [...wishlistBooks].sort(
           (a, b) => a.rating - b.rating,
+        );
+        setSortedReadBooks(sortedData1);
+        setSortedWishlistBooks(sortedData2);
+      } else if (sortingType === "rating-high-to-low") {
+        const sortedData1 = [...readBooks].sort((a, b) => b.rating - a.rating);
+        const sortedData2 = [...wishlistBooks].sort(
+          (a, b) => b.rating - a.rating,
         );
         setSortedReadBooks(sortedData1);
         setSortedWishlistBooks(sortedData2);
@@ -57,6 +73,13 @@ const BookPage = () => {
             </li>
             <li onClick={() => setSortingType("rating-low-to-high")}>
               <a>Rating: Low to High</a>
+            </li>
+
+            <li onClick={() => setSortingType("pages-high-to-low")}>
+              <a>Pages: High to Low</a>
+            </li>
+            <li onClick={() => setSortingType("rating-high-to-low")}>
+              <a>Rating: High to Low</a>
             </li>
           </ul>
         </div>
