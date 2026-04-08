@@ -1,16 +1,29 @@
-# React + Vite
+# 📚 Book Vibe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To show the live demo <a href="https://book-vibe-eight-blush.vercel.app/">Click Here</a>
 
-Currently, two official plugins are available:
+**Book Vibe** is a modern, interactive React application for book lovers to browse, track, and organize books. Users can view all books, add books to their **Read List** or **Wishlist**, and visualize reading progress with interactive charts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Technologies Used
 
-## React Compiler
+- **React** – Frontend library for building UI components
+- **React Router DOM** – For client-side routing
+- **Tailwind CSS** – Styling and responsive design
+- **DaisyUI** – Tailwind UI component library
+- **React Toastify** – Notifications for user interactions
+- **Recharts** – Charts for visualizing reading data
+- **React Icons** – For icons throughout the app
+- **JavaScript (ES6+)**
+- **HTML5 & CSS3**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Features
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Browse a curated list of books with tags, ratings, and categories.
+- View detailed book information, including reviews, publisher, year of publishing, and total pages.
+- Add books to Read Books or Wishlist.
+- Sorting options for read books and wishlist by Pages and Rating.
+- Visual representation of wishlist books using Bar Charts.
+- Responsive and modern UI using Tailwind CSS.
+- Smooth scroll and interactive navigation.
+- Toast notifications for actions like adding to wishlist or marking as read.
+- Error handling with a custom 404 page.
