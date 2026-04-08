@@ -38,7 +38,7 @@ const ReadBookCard = ({ readBook }) => {
             <p>Year of Publishing: {readBook.yearOfPublishing}</p>
           </div>
         </div>
-        <div className="flex gap-4 mt-4">
+        <div className="flex flex-wrap gap-4 mt-4">
           <div className="flex items-center gap-2 text-[#131313]/60">
             <FaUserGroup />
             <p>Publisher: {readBook.publisher}</p>
