@@ -15,6 +15,7 @@ const BookPage = () => {
 
   useEffect(() => {
     if (sortingType) {
+      // Page sorting for readbooks and wishlist books
       if (sortingType === "pages-low-to-high") {
         const sortedData1 = [...readBooks].sort(
           (a, b) => a.totalPages - b.totalPages,
@@ -33,7 +34,9 @@ const BookPage = () => {
         );
         setSortedReadBooks(sortedData1);
         setSortedWishlistBooks(sortedData2);
-      } else if (sortingType === "rating-low-to-high") {
+      }
+      // Rating sorting for readbooks and wishlist books
+      if (sortingType === "rating-low-to-high") {
         const sortedData1 = [...readBooks].sort((a, b) => a.rating - b.rating);
         const sortedData2 = [...wishlistBooks].sort(
           (a, b) => a.rating - b.rating,
@@ -58,8 +61,12 @@ const BookPage = () => {
       </div>
       <div className="text-center mt-10">
         <div className="dropdown dropdown-bottom">
-          <div tabIndex={0} role="button" className="btn m-1">
-            Sort By ⬇️
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn m-1 bg-[#23BE0A] text-white"
+          >
+            Sort By 🡻
           </div>
           <ul
             tabIndex="-1"
@@ -97,6 +104,7 @@ const BookPage = () => {
 
           <TabPanel>
             {readBooks.length === 0 ? (
+              // If read books list is empty
               <>
                 <div className="flex flex-col items-center justify-center py-20">
                   <FaBookOpenReader className="text-gray-400" size={100} />
@@ -110,6 +118,7 @@ const BookPage = () => {
               <>
                 {sortingType === "" ? (
                   <>
+                    {/* Default read books data */}
                     <div className="flex flex-col gap-8 mt-10">
                       {readBooks.map((readBook) => (
                         <ReadBookCard
@@ -121,6 +130,7 @@ const BookPage = () => {
                   </>
                 ) : (
                   <>
+                    {/* Sorted read books data */}
                     <div className="flex flex-col gap-8 mt-10">
                       {sortedReadBooks.map((readBook) => (
                         <ReadBookCard
@@ -136,6 +146,7 @@ const BookPage = () => {
           </TabPanel>
           <TabPanel>
             {wishlistBooks.length === 0 ? (
+              // If wishlist books is empty
               <>
                 <div className="flex flex-col items-center justify-center py-20">
                   <FaBookOpenReader className="text-gray-400" size={100} />
@@ -149,6 +160,7 @@ const BookPage = () => {
               <>
                 {sortingType === "" ? (
                   <>
+                    {/* Default wishlist data */}
                     <div className="flex flex-col gap-8 mt-10">
                       {wishlistBooks.map((wishlistBook) => (
                         <WishBookCard
@@ -160,6 +172,7 @@ const BookPage = () => {
                   </>
                 ) : (
                   <>
+                    {/* Sorted wishlist data */}
                     <div className="flex flex-col gap-8 mt-10">
                       {sortedWishlishBooks.map((wishlistBook) => (
                         <WishBookCard
